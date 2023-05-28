@@ -1,0 +1,19 @@
+<h2>Movie List</h2>
+
+<div *ngIf="movies">
+  <ul>
+    <li *ngFor="let movie of movies">
+      <h3>Movie Details</h3>
+      <p><strong>Title :</strong> {{ movie.title }}</p>
+
+      <p><strong>Release Date:</strong> {{ movie.releaseDate }}</p>
+      <p><strong>Director:</strong> {{ movie.director }}</p>
+      <p><strong>Description:</strong> {{ movie.description }}</p>
+      <hr>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="!movies">
+  <p>Loading movies...</p>
+</div>
