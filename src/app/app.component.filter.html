@@ -1,0 +1,32 @@
+<form>
+  <div>
+    <label for="genre">{{title}}</label>
+    <select id="genre" name="genre">
+      <option value="action">Action</option>
+      <option value="comedy">Comedy</option>
+      <option value="drama">Drama</option>
+      <!-- Add more genre options here -->
+    </select>
+  </div>
+  <div>
+    <label for="releaseYearFrom">Release Year (From):</label>
+    <input type="number" id="releaseYearFrom" name="releaseYearFrom" min="1950" max="2022">
+  </div>
+  <div>
+    <label for="releaseYearTo">Release Year (To):</label>
+    <input type="number" id="releaseYearTo" name="releaseYearTo" min="1950" max="2022">
+  </div>
+  <div>
+    <label for="cast">Cast:</label>
+    <input type="text" id="cast" name="cast">
+  </div>
+  <div>
+    <label for="director">Director:</label>
+    <input type="text" id="director" name="director">
+  </div>
+  <!-- Add more filter fields here (up to a maximum of ten) -->
+  <div>
+    <button type="submit">Rank Movies</button>
+  </div>
+</form>
+
