@@ -8,6 +8,30 @@
     padding: 8px;
     text-align: left;
   }
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    text-decoration: underline;
+  }
+
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+    background-color: red;
+    text-underline: black;
+  }
 </style>
 <h2>Movie List</h2>
 
@@ -45,7 +69,7 @@
       <td>{{ movie.popularity }}</td>
       <td>{{ movie.budget }}</td>
       <td>{{ movie.revenue }}</td>
-      <td>{{ movie.original_title }}</td>
+      <td [title]="movie.overview" (click)="handleClick(movie)">{{ movie.original_title }}</td>
       <td>{{ movie.cast }}</td>
       <td>{{ movie.homepage }}</td>
       <td>{{ movie.director }}</td>

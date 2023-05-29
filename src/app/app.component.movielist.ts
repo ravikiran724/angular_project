@@ -12,4 +12,7 @@ export class MovieListComponent {
   constructor(private movieService: MovieService) {
   }
 
+  // handleClick(movie: Movie) {
+  //
+  // }
 }

@@ -1,12 +1,12 @@
 <html>
 <head>
   <title>
-    scds
+    Movie Data
   </title>
 </head>
 <body>
-<app-filter-form (filterChanged)="filterMovies($event)"></app-filter-form>
-<app-movie-list [filteredMovies]="output"></app-movie-list>
-<!--<app-display-movie></app-display-movie>-->
+<app-filter-form (filterChanged)="filterMovies($event)" [hidden]="!hidden"></app-filter-form>
+<app-movie-list [filteredMovies]="output" [hidden]="!hidden"></app-movie-list>
+<app-display-movie [hidden]="hidden" (clickButton)="setTotrue($event)"></app-display-movie>
 </body>
 </html>

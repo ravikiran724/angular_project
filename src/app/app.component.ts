@@ -10,16 +10,21 @@ import {Observable} from "rxjs";
 export class AppComponent {
   filteredMovies: Observable<Movie[]>;
   output:Movie[] = []
+  hidden:boolean = true
 
   constructor(private movieService: MovieService) {
     this.filteredMovies = this.movieService.getMoviesFromCSV("assets/tmdb-movies.csv")
   }
 
+  setTotrue(data:any){
+    this.hidden = true;
+  }
   filterMovies(filters: any) {
     const { genre, releaseYearFrom,releaseYearTo, cast, director, numberOfRecords } = filters;
     this.filteredMovies = this.movieService.getMoviesFromCSV("assets/tmdb-movies.csv")
     this.filteredMovies.subscribe(mov=>{
       this.output = this.movieService.rankMovies(mov,genre, releaseYearFrom,releaseYearTo, cast, director, numberOfRecords);
     })
+    this.hidden = false;
   }
 }
