@@ -11,7 +11,7 @@
 </style>
 <h2>Movie List</h2>
 
-<div *ngIf="movies">
+<div *ngIf="filteredMovies">
   <table>
     <thead>
     <tr>
@@ -39,7 +39,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let movie of movies">
+    <tr *ngFor="let movie of filteredMovies">
       <td>{{ movie.id }}</td>
       <td>{{ movie.imdb_id }}</td>
       <td>{{ movie.popularity }}</td>
@@ -67,6 +67,6 @@
 </div>
 
 
-<div *ngIf="!movies">
+<div *ngIf="!filteredMovies">
   <p>Loading movies...</p>
 </div>

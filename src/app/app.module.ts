@@ -6,13 +6,16 @@ import {FilterComponent} from './app.component.filter'
 
 import {MovieDisplay} from './app.component.MovieDisplay'
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import {MovieListComponent} from "./app.component.movielist";
+
 
 @NgModule({
   declarations: [
-    AppComponent, FilterComponent, MovieDisplay
+    AppComponent, FilterComponent, MovieDisplay, MovieListComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule
+    BrowserModule, HttpClientModule, FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

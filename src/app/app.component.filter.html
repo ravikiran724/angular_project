@@ -1,32 +1,56 @@
+<style>
+  form {
+    display: table;
+    width: 100%;
+    border-spacing: 10px;
+  }
+
+  form div {
+    display: table-row;
+  }
+
+  form div label,
+  form div input,
+  form div select {
+    display: table-cell;
+    padding: 5px;
+  }
+
+  form div button {
+    display: table-cell;
+    padding-top: 10px;
+  }
+</style>
+
+
 <form>
   <div>
-    <label for="genre">{{title}}</label>
-    <select id="genre" name="genre">
-      <option value="action">Action</option>
-      <option value="comedy">Comedy</option>
-      <option value="drama">Drama</option>
-      <!-- Add more genre options here -->
-    </select>
+    <label for="cast">Genre:</label>
+    <input type="text" id="genre" name="genre" [(ngModel)]="selectedGenre">
   </div>
   <div>
     <label for="releaseYearFrom">Release Year (From):</label>
-    <input type="number" id="releaseYearFrom" name="releaseYearFrom" min="1950" max="2022">
+    <input type="number" id="releaseYearFrom" name="releaseYearFrom" min="1950" max="2022" [(ngModel)]="selectedReleaseYearFrom">
   </div>
   <div>
     <label for="releaseYearTo">Release Year (To):</label>
-    <input type="number" id="releaseYearTo" name="releaseYearTo" min="1950" max="2022">
+    <input type="number" id="releaseYearTo" name="releaseYearTo" min="1950" max="2022" [(ngModel)]="selectedReleaseYearTo">
   </div>
   <div>
     <label for="cast">Cast:</label>
-    <input type="text" id="cast" name="cast">
+    <input type="text" id="cast" name="cast" [(ngModel)]="selectedCast">
   </div>
   <div>
     <label for="director">Director:</label>
-    <input type="text" id="director" name="director">
+    <input type="text" id="director" name="director" [(ngModel)]="selectedDirector">
+  </div>
+  <div>
+    <label for="numberOfRecords">Records To Display: </label>
+    <input type="number" id="numberOfRecords" name="numberOfRecords" min="1" [(ngModel)]="numberOfRecords">
   </div>
   <!-- Add more filter fields here (up to a maximum of ten) -->
   <div>
-    <button type="submit">Rank Movies</button>
+    <button (click)="applyFilters()">Apply Filters</button>
   </div>
 </form>
 
